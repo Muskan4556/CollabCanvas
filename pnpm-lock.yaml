@@ -115,6 +115,13 @@ importers:
       ws:
         specifier: ^8.19.0
         version: 8.19.0
+    devDependencies:
+      '@repo/db':
+        specifier: workspace:*
+        version: link:../../packages/db
+      tsx:
+        specifier: ^4.19.2
+        version: 4.21.0
 
   packages/backend-common:
     dependencies:
