@@ -1,4 +1,5 @@
 {
+  "editor.accessibilitySupport": "off",
   "eslint.workingDirectories": [
     {
       "mode": "auto"

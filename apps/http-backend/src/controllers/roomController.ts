@@ -32,3 +32,19 @@ export const createRoom = async (req: Request, res: Response) => {
     return res.status(500).json({ message: "Internal server error!!!" });
   }
 };
+
+export const getRoomBySlug = async (req: Request, res: Response) => {
+  const { slug } = req.params;
+  try {
+    const room = await prismaClient.room.findUnique({
+      where: { slug: slug },
+    });
+    if (!room) {
+      return res.status(404).json({ message: "Room not found" });
+    }
+    return res.status(200).json({ roomId: room.id });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({ message: "Internal server error!!!" });
+  }
+};
